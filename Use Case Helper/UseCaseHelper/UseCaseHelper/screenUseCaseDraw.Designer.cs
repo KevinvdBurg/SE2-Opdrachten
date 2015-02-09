@@ -35,6 +35,10 @@
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.pnlUseCase = new System.Windows.Forms.Panel();
+            this.lbX = new System.Windows.Forms.Label();
+            this.lbY = new System.Windows.Forms.Label();
+            this.dyX = new System.Windows.Forms.Label();
+            this.dyY = new System.Windows.Forms.Label();
             this.gbSelectDrawingGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,12 +114,53 @@
             this.pnlUseCase.TabIndex = 3;
             this.pnlUseCase.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUseCase_Paint);
             this.pnlUseCase.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseClick);
+            this.pnlUseCase.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseMove);
+            // 
+            // lbX
+            // 
+            this.lbX.AutoSize = true;
+            this.lbX.Location = new System.Drawing.Point(682, 21);
+            this.lbX.Name = "lbX";
+            this.lbX.Size = new System.Drawing.Size(14, 13);
+            this.lbX.TabIndex = 4;
+            this.lbX.Text = "X";
+            // 
+            // lbY
+            // 
+            this.lbY.AutoSize = true;
+            this.lbY.Location = new System.Drawing.Point(682, 38);
+            this.lbY.Name = "lbY";
+            this.lbY.Size = new System.Drawing.Size(14, 13);
+            this.lbY.TabIndex = 5;
+            this.lbY.Text = "Y";
+            // 
+            // dyX
+            // 
+            this.dyX.AutoSize = true;
+            this.dyX.Location = new System.Drawing.Point(703, 21);
+            this.dyX.Name = "dyX";
+            this.dyX.Size = new System.Drawing.Size(25, 13);
+            this.dyX.TabIndex = 6;
+            this.dyX.Text = "dyX";
+            // 
+            // dyY
+            // 
+            this.dyY.AutoSize = true;
+            this.dyY.Location = new System.Drawing.Point(703, 38);
+            this.dyY.Name = "dyY";
+            this.dyY.Size = new System.Drawing.Size(25, 13);
+            this.dyY.TabIndex = 7;
+            this.dyY.Text = "dyY";
             // 
             // ScreenUseCaseDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 661);
+            this.Controls.Add(this.dyY);
+            this.Controls.Add(this.dyX);
+            this.Controls.Add(this.lbY);
+            this.Controls.Add(this.lbX);
             this.Controls.Add(this.pnlUseCase);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnUndo);
@@ -127,6 +172,7 @@
             this.gbSelectDrawingGroup.ResumeLayout(false);
             this.gbSelectDrawingGroup.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -139,6 +185,10 @@
         private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Panel pnlUseCase;
+        private System.Windows.Forms.Label lbX;
+        private System.Windows.Forms.Label lbY;
+        private System.Windows.Forms.Label dyX;
+        private System.Windows.Forms.Label dyY;
     }
 }
 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -46,9 +47,6 @@ namespace UseCaseHelper
 
             UMLObject currentUMLObject;
             string currentType;
-
-            x = MousePosition.X;
-            y = MousePosition.Y;
 
             //Line
             if (rbtnLine.Checked)
@@ -106,8 +104,7 @@ namespace UseCaseHelper
 
             foreach (UMLObject obj in UMLList)
             {
-                 Console.WriteLine(obj);
-                
+             
                 if (obj.Type == Convert.ToString(umlType.Line))
                 {
                     g.DrawLine(p, obj.Position[0].X, obj.Position[0].Y, obj.Position[1].X, obj.Position[1].Y);
@@ -123,6 +120,14 @@ namespace UseCaseHelper
 
                 }
             }
+        }
+
+        private void pnlUseCase_MouseMove(object sender, MouseEventArgs e)
+        {
+            x = e.X;
+            y = e.Y;
+            dyX.Text = Convert.ToString(x);
+            dyY.Text = Convert.ToString(y);
         }
     }
 }
