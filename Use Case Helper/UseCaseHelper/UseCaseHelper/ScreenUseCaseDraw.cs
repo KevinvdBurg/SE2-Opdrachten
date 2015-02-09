@@ -81,6 +81,7 @@ namespace UseCaseHelper
                     currentUMLObject = new UMLObject(currentType, positionList);
                     UMLList.Add(currentUMLObject);
                     countClicks = 0;
+                    ClearPoints();
                 }
 
                 Refresh();
@@ -102,6 +103,11 @@ namespace UseCaseHelper
             Graphics g = e.Graphics;
             Pen p = new Pen(Color.Black, 1);
 
+            if (!Pos1.IsEmpty)
+            {
+                DrawIncompleteLine(g, Pos1.X, Pos1.Y, x, y);
+            }
+            
             foreach (UMLObject obj in UMLList)
             {
              
@@ -128,6 +134,19 @@ namespace UseCaseHelper
             y = e.Y;
             dyX.Text = Convert.ToString(x);
             dyY.Text = Convert.ToString(y);
+        }
+
+        private void DrawIncompleteLine(Graphics g, int pos1x, int pos1y, int pos2x, int pos2y)
+        {
+            Pen p = new Pen(Color.Black, 1);
+            g.DrawLine(p, pos1x, pos1y, pos2x, pos2y);
+            Refresh();
+        }
+
+        private void ClearPoints()
+        {
+            Pos1 = new Point();
+            Pos2 = new Point();
         }
     }
 }
