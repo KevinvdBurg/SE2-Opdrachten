@@ -1,0 +1,10 @@
+C:\Users\milton\Desktop\UseCaseHelper\UseCaseHelper\bin\Debug\UseCaseHelper.exe.config
+C:\Users\milton\Desktop\UseCaseHelper\UseCaseHelper\bin\Debug\UseCaseHelper.exe
+C:\Users\milton\Desktop\UseCaseHelper\UseCaseHelper\bin\Debug\UseCaseHelper.pdb
+C:\Users\milton\Desktop\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.csprojResolveAssemblyReference.cache
+C:\Users\milton\Desktop\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.screenUseCaseDraw.resources
+C:\Users\milton\Desktop\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.Properties.Resources.resources
+C:\Users\milton\Desktop\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.screenUseCaseTable.resources
+C:\Users\milton\Desktop\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.csproj.GenerateResource.Cache
+C:\Users\milton\Desktop\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.exe
+C:\Users\milton\Desktop\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.pdb
