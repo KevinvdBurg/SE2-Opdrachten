@@ -13,13 +13,16 @@ namespace UseCaseHelper
         public List<Point> Position { get; set; }
         public string Text { get; set; }
 
-        public UMLObject(string Type, List<Point> Position)
+        public UMLObject(string type, List<Point> position)
         {
-
+            this.Type = type;
+            this.Position = position;
         }
-        public UMLObject(string Type, List<Point> Position, string Text)
+        public UMLObject(string type, List<Point> position, string text)
         {
-
+            this.Type = type;
+            this.Position = position;
+            this.Text = text;
         }
     }
 }

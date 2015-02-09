@@ -20,6 +20,8 @@ namespace UseCaseHelper
         bool rbtnLineState = false;
         bool rbtnEclipseState = false;
         bool rbtnTextState = false;
+        Point Pos2 = new Point();
+        Point Pos1 = new Point();
         
         enum umlType
         {
@@ -40,9 +42,8 @@ namespace UseCaseHelper
         private void pnlUseCase_MouseClick(object sender, MouseEventArgs e)
         {
             //fields
-            List<Point> PositionList = new List<Point>();
-            Point Pos1 = new Point();
-            Point Pos2 = new Point();
+            List<Point> positionList = new List<Point>();
+
             UMLObject currentUMLObject;
             string currentType;
 
@@ -63,19 +64,23 @@ namespace UseCaseHelper
 
                 if (countClicks == 0)
                 {
+                    Pos1 = new Point();
+
                     Pos1.X = x;
                     Pos1.Y = y;
                     countClicks++;
                 }
                 else if (countClicks > 0)
                 {
+                    Pos2 = new Point();
+
                     Pos2.X = x;
                     Pos2.Y = y;
 
-                    PositionList.Add(Pos1);
-                    PositionList.Add(Pos2); 
+                    positionList.Add(Pos1);
+                    positionList.Add(Pos2); 
                     currentType = Convert.ToString(umlType.Line);
-                    currentUMLObject = new UMLObject(currentType, PositionList);
+                    currentUMLObject = new UMLObject(currentType, positionList);
                     UMLList.Add(currentUMLObject);
                     countClicks = 0;
                 }
@@ -90,8 +95,6 @@ namespace UseCaseHelper
             {
                 currentType = Convert.ToString(umlType.Text);
             }
-
-            
         }
     }
 }
