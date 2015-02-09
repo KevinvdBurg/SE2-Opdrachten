@@ -108,6 +108,7 @@
             this.pnlUseCase.Name = "pnlUseCase";
             this.pnlUseCase.Size = new System.Drawing.Size(860, 582);
             this.pnlUseCase.TabIndex = 3;
+            this.pnlUseCase.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUseCase_Paint);
             this.pnlUseCase.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseClick);
             // 
             // ScreenUseCaseDraw

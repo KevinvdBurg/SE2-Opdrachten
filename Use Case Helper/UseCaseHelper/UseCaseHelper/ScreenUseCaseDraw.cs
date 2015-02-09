@@ -84,6 +84,8 @@ namespace UseCaseHelper
                     UMLList.Add(currentUMLObject);
                     countClicks = 0;
                 }
+
+                Refresh();
             }
             //Eclipse
             else if (rbtnEclipse.Checked)
@@ -94,6 +96,32 @@ namespace UseCaseHelper
             else if (rbtnText.Checked)
             {
                 currentType = Convert.ToString(umlType.Text);
+            }
+        }
+
+        private void pnlUseCase_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Pen p = new Pen(Color.Black, 1);
+
+            foreach (UMLObject obj in UMLList)
+            {
+                 Console.WriteLine(obj);
+                
+                if (obj.Type == Convert.ToString(umlType.Line))
+                {
+                    g.DrawLine(p, obj.Position[0].X, obj.Position[0].Y, obj.Position[1].X, obj.Position[1].Y);
+                }
+
+                else if (obj.Type == Convert.ToString(umlType.Eclipse))
+                {
+
+                }
+
+                else if (obj.Type == Convert.ToString(umlType.Text))
+                {
+
+                }
             }
         }
     }
