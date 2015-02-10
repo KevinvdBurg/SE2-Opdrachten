@@ -44,9 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Panel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ScreenUseCaseDraw.cs">
       <SubType>Form</SubType>
     </Compile>

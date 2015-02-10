@@ -64,6 +64,7 @@
             this.rbtnText.TabStop = true;
             this.rbtnText.Text = "Text";
             this.rbtnText.UseVisualStyleBackColor = true;
+            this.rbtnText.CheckedChanged += new System.EventHandler(this.rbtnText_CheckedChanged);
             // 
             // rbtnLine
             // 
@@ -75,6 +76,7 @@
             this.rbtnLine.TabStop = true;
             this.rbtnLine.Text = "Line";
             this.rbtnLine.UseVisualStyleBackColor = true;
+            this.rbtnLine.CheckedChanged += new System.EventHandler(this.rbtnLine_CheckedChanged);
             // 
             // rbtnEclipse
             // 
@@ -86,6 +88,7 @@
             this.rbtnEclipse.TabStop = true;
             this.rbtnEclipse.Text = "Eclipse";
             this.rbtnEclipse.UseVisualStyleBackColor = true;
+            this.rbtnEclipse.CheckedChanged += new System.EventHandler(this.rbtnEclipse_CheckedChanged);
             // 
             // btnUndo
             // 

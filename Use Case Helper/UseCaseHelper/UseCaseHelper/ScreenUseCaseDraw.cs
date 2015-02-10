@@ -51,14 +51,6 @@ namespace UseCaseHelper
             //Line
             if (rbtnLine.Checked)
             {
-                rbtnLineState = true;
-
-                if (rbtnEclipseState == true || rbtnTextState == true)
-                {
-                    countClicks = 0;
-                    rbtnEclipseState = false;
-                    rbtnTextState = false;
-                }
 
                 if (countClicks == 0)
                 {
@@ -81,6 +73,7 @@ namespace UseCaseHelper
                     currentUMLObject = new UMLObject(currentType, positionList);
                     UMLList.Add(currentUMLObject);
                     countClicks = 0;
+                    
                     ClearPoints();
                 }
 
@@ -89,11 +82,14 @@ namespace UseCaseHelper
             //Eclipse
             else if (rbtnEclipse.Checked)
             {
+                
                 currentType = Convert.ToString(umlType.Eclipse);
             }
             //Text
             else if (rbtnText.Checked)
             {
+               
+
                 currentType = Convert.ToString(umlType.Text);
             }
         }
@@ -101,16 +97,17 @@ namespace UseCaseHelper
         private void pnlUseCase_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
             Pen p = new Pen(Color.Black, 1);
 
             if (!Pos1.IsEmpty)
             {
                 DrawIncompleteLine(g, Pos1.X, Pos1.Y, x, y);
             }
-            
+
             foreach (UMLObject obj in UMLList)
             {
-             
+
                 if (obj.Type == Convert.ToString(umlType.Line))
                 {
                     g.DrawLine(p, obj.Position[0].X, obj.Position[0].Y, obj.Position[1].X, obj.Position[1].Y);
@@ -126,6 +123,7 @@ namespace UseCaseHelper
 
                 }
             }
+
         }
 
         private void pnlUseCase_MouseMove(object sender, MouseEventArgs e)
@@ -147,6 +145,48 @@ namespace UseCaseHelper
         {
             Pos1 = new Point();
             Pos2 = new Point();
+        }
+
+        private void rbtnEclipse_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnEclipseState = true;
+
+            if (rbtnLineState == true || rbtnTextState == true)
+            {
+                countClicks = 0;
+                rbtnLineState = false;
+                rbtnTextState = false;
+                ClearPoints();
+                Refresh();
+            }
+        }
+
+        private void rbtnLine_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnLineState = true;
+
+            if (rbtnEclipseState == true || rbtnTextState == true)
+            {
+                countClicks = 0;
+                rbtnEclipseState = false;
+                rbtnTextState = false;
+                ClearPoints();
+                Refresh();
+            }
+        }
+
+        private void rbtnText_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnTextState = true;
+
+            if (rbtnLineState == true || rbtnEclipseState == true)
+            {
+                countClicks = 0;
+                rbtnLineState = false;
+                rbtnEclipseState = false;
+                ClearPoints();
+                Refresh();
+            }
         }
     }
 }
