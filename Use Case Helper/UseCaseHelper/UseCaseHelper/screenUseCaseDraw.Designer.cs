@@ -32,15 +32,15 @@
             this.rbtnText = new System.Windows.Forms.RadioButton();
             this.rbtnLine = new System.Windows.Forms.RadioButton();
             this.rbtnEclipse = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.pnlUseCase = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.lbX = new System.Windows.Forms.Label();
             this.lbY = new System.Windows.Forms.Label();
             this.dyX = new System.Windows.Forms.Label();
             this.dyY = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.gbSelectDrawingGroup.SuspendLayout();
             this.pnlUseCase.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +94,13 @@
             this.rbtnEclipse.UseVisualStyleBackColor = true;
             this.rbtnEclipse.CheckedChanged += new System.EventHandler(this.rbtnEclipse_CheckedChanged);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 61);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 179);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // btnUndo
             // 
             this.btnUndo.Location = new System.Drawing.Point(182, 12);
@@ -124,6 +131,13 @@
             this.pnlUseCase.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUseCase_Paint);
             this.pnlUseCase.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseClick);
             this.pnlUseCase.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseMove);
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 407);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel3.TabIndex = 2;
             // 
             // lbX
             // 
@@ -161,20 +175,6 @@
             this.dyY.TabIndex = 7;
             this.dyY.Text = "dyY";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 61);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 179);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 407);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(0, 0);
-            this.flowLayoutPanel3.TabIndex = 2;
-            // 
             // ScreenUseCaseDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,10 +184,10 @@
             this.Controls.Add(this.dyX);
             this.Controls.Add(this.lbY);
             this.Controls.Add(this.lbX);
-            this.Controls.Add(this.pnlUseCase);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnUndo);
             this.Controls.Add(this.gbSelectDrawingGroup);
+            this.Controls.Add(this.pnlUseCase);
             this.Location = new System.Drawing.Point(100, 100);
             this.Name = "ScreenUseCaseDraw";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

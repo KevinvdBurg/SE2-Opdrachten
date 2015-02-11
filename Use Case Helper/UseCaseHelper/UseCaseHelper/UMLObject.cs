@@ -11,18 +11,18 @@ namespace UseCaseHelper
     {
         public string Type { get; set; }
         public List<Point> Position { get; set; }
-        public string Text { get; set; }
+        public int Count { get; set; }
 
         public UMLObject(string type, List<Point> position)
         {
             this.Type = type;
             this.Position = position;
         }
-        public UMLObject(string type, List<Point> position, string text)
+        public UMLObject(string type, List<Point> position, int count)
         {
             this.Type = type;
             this.Position = position;
-            this.Text = text;
+            this.Count = count;
         }
     }
 }

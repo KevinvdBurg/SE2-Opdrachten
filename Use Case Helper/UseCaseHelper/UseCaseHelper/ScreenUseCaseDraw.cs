@@ -22,10 +22,9 @@ namespace UseCaseHelper
         private bool rbtnLineState = false;
         private bool rbtnEclipseState = false;
         private bool rbtnTextState = false;
-        private bool MouseMove = false;
         private Point Pos2 = new Point();
         private Point Pos1 = new Point();
-        
+        private int txtboxCount = 0;
 
         
         enum umlType
@@ -83,17 +82,36 @@ namespace UseCaseHelper
 
                 Refresh();
             }
+
             //Eclipse
             else if (rbtnEclipse.Checked)
             {
                 
+                Pos1.X = x;
+                Pos1.Y = y;
+
+                positionList.Add(Pos1);
                 currentType = Convert.ToString(umlType.Eclipse);
+                currentUMLObject = new UMLObject(currentType, positionList);
+                umlList.Add(currentUMLObject);
+
+                ClearPoints();
+
+                Refresh();
             }
             //Text
             else if (rbtnText.Checked)
             {
-                currentType = Convert.ToString(umlType.Text);
+                Pos1.X = x;
+                Pos1.Y = y;
+                TextBox txt = new TextBox();
+                txt.Name = "dyTextbox" + txtboxCount++;
+                txt.Location = Pos1;
+                txt.Click();
+                this.pnlUseCase.Controls.Add(txt);
+                ClearPoints();
             }
+
         }
 
         private void pnlUseCase_Paint(object sender, PaintEventArgs e)
@@ -133,12 +151,12 @@ namespace UseCaseHelper
 
                 else if (obj.Type == Convert.ToString(umlType.Eclipse))
                 {
-
+                    g.DrawEllipse(p, obj.Position[0].X - 75, obj.Position[0].Y - 50, 150, 100);
                 }
 
                 else if (obj.Type == Convert.ToString(umlType.Text))
                 {
-
+                    
                 }
             }
 

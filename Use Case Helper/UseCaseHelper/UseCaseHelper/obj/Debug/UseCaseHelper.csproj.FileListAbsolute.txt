@@ -17,3 +17,4 @@ C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseC
 C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.csproj.GenerateResource.Cache
 C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.exe
 C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.pdb
+C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.csprojResolveAssemblyReference.cache
