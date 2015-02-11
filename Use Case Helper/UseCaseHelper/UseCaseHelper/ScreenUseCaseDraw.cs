@@ -21,8 +21,11 @@ namespace UseCaseHelper
         bool rbtnLineState = false;
         bool rbtnEclipseState = false;
         bool rbtnTextState = false;
+        bool MouseMove = false;
         Point Pos2 = new Point();
         Point Pos1 = new Point();
+        
+
         
         enum umlType
         {
@@ -88,8 +91,6 @@ namespace UseCaseHelper
             //Text
             else if (rbtnText.Checked)
             {
-               
-
                 currentType = Convert.ToString(umlType.Text);
             }
         }
@@ -130,15 +131,21 @@ namespace UseCaseHelper
         {
             x = e.X;
             y = e.Y;
+
             dyX.Text = Convert.ToString(x);
             dyY.Text = Convert.ToString(y);
+
+            if (!Pos1.IsEmpty)
+            {
+                Refresh();
+            }
+            
         }
 
         private void DrawIncompleteLine(Graphics g, int pos1x, int pos1y, int pos2x, int pos2y)
         {
             Pen p = new Pen(Color.Black, 1);
             g.DrawLine(p, pos1x, pos1y, pos2x, pos2y);
-            Refresh();
         }
 
         private void ClearPoints()

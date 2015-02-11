@@ -39,6 +39,8 @@
             this.lbY = new System.Windows.Forms.Label();
             this.dyX = new System.Windows.Forms.Label();
             this.dyY = new System.Windows.Forms.Label();
+            this.lbMM = new System.Windows.Forms.Label();
+            this.dyM = new System.Windows.Forms.Label();
             this.gbSelectDrawingGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,7 +124,7 @@
             // lbX
             // 
             this.lbX.AutoSize = true;
-            this.lbX.Location = new System.Drawing.Point(682, 21);
+            this.lbX.Location = new System.Drawing.Point(826, 21);
             this.lbX.Name = "lbX";
             this.lbX.Size = new System.Drawing.Size(14, 13);
             this.lbX.TabIndex = 4;
@@ -131,7 +133,7 @@
             // lbY
             // 
             this.lbY.AutoSize = true;
-            this.lbY.Location = new System.Drawing.Point(682, 38);
+            this.lbY.Location = new System.Drawing.Point(826, 38);
             this.lbY.Name = "lbY";
             this.lbY.Size = new System.Drawing.Size(14, 13);
             this.lbY.TabIndex = 5;
@@ -140,7 +142,7 @@
             // dyX
             // 
             this.dyX.AutoSize = true;
-            this.dyX.Location = new System.Drawing.Point(703, 21);
+            this.dyX.Location = new System.Drawing.Point(847, 21);
             this.dyX.Name = "dyX";
             this.dyX.Size = new System.Drawing.Size(25, 13);
             this.dyX.TabIndex = 6;
@@ -149,17 +151,37 @@
             // dyY
             // 
             this.dyY.AutoSize = true;
-            this.dyY.Location = new System.Drawing.Point(703, 38);
+            this.dyY.Location = new System.Drawing.Point(847, 38);
             this.dyY.Name = "dyY";
             this.dyY.Size = new System.Drawing.Size(25, 13);
             this.dyY.TabIndex = 7;
             this.dyY.Text = "dyY";
+            // 
+            // lbMM
+            // 
+            this.lbMM.AutoSize = true;
+            this.lbMM.Location = new System.Drawing.Point(675, 22);
+            this.lbMM.Name = "lbMM";
+            this.lbMM.Size = new System.Drawing.Size(92, 13);
+            this.lbMM.TabIndex = 8;
+            this.lbMM.Text = "Mouse Movement";
+            // 
+            // dyM
+            // 
+            this.dyM.AutoSize = true;
+            this.dyM.Location = new System.Drawing.Point(774, 22);
+            this.dyM.Name = "dyM";
+            this.dyM.Size = new System.Drawing.Size(16, 13);
+            this.dyM.TabIndex = 9;
+            this.dyM.Text = "M";
             // 
             // ScreenUseCaseDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 661);
+            this.Controls.Add(this.dyM);
+            this.Controls.Add(this.lbMM);
             this.Controls.Add(this.dyY);
             this.Controls.Add(this.dyX);
             this.Controls.Add(this.lbY);
@@ -192,6 +214,8 @@
         private System.Windows.Forms.Label lbY;
         private System.Windows.Forms.Label dyX;
         private System.Windows.Forms.Label dyY;
+        private System.Windows.Forms.Label lbMM;
+        private System.Windows.Forms.Label dyM;
     }
 }
 
