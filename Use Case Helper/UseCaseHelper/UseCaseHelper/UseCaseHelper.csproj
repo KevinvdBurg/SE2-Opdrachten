@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actor.cs" />
     <Compile Include="ScreenUseCaseDraw.cs">
       <SubType>Form</SubType>
     </Compile>

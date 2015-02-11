@@ -39,9 +39,10 @@
             this.lbY = new System.Windows.Forms.Label();
             this.dyX = new System.Windows.Forms.Label();
             this.dyY = new System.Windows.Forms.Label();
-            this.lbMM = new System.Windows.Forms.Label();
-            this.dyM = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.gbSelectDrawingGroup.SuspendLayout();
+            this.pnlUseCase.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbSelectDrawingGroup
@@ -49,6 +50,7 @@
             this.gbSelectDrawingGroup.Controls.Add(this.rbtnText);
             this.gbSelectDrawingGroup.Controls.Add(this.rbtnLine);
             this.gbSelectDrawingGroup.Controls.Add(this.rbtnEclipse);
+            this.gbSelectDrawingGroup.Controls.Add(this.flowLayoutPanel1);
             this.gbSelectDrawingGroup.Location = new System.Drawing.Point(12, 6);
             this.gbSelectDrawingGroup.Name = "gbSelectDrawingGroup";
             this.gbSelectDrawingGroup.Size = new System.Drawing.Size(166, 55);
@@ -59,7 +61,7 @@
             // rbtnText
             // 
             this.rbtnText.AutoSize = true;
-            this.rbtnText.Location = new System.Drawing.Point(112, 19);
+            this.rbtnText.Location = new System.Drawing.Point(116, 19);
             this.rbtnText.Name = "rbtnText";
             this.rbtnText.Size = new System.Drawing.Size(46, 17);
             this.rbtnText.TabIndex = 2;
@@ -83,7 +85,7 @@
             // rbtnEclipse
             // 
             this.rbtnEclipse.AutoSize = true;
-            this.rbtnEclipse.Location = new System.Drawing.Point(0, 19);
+            this.rbtnEclipse.Location = new System.Drawing.Point(6, 19);
             this.rbtnEclipse.Name = "rbtnEclipse";
             this.rbtnEclipse.Size = new System.Drawing.Size(59, 17);
             this.rbtnEclipse.TabIndex = 0;
@@ -113,10 +115,12 @@
             // 
             // pnlUseCase
             // 
+            this.pnlUseCase.Controls.Add(this.flowLayoutPanel3);
             this.pnlUseCase.Location = new System.Drawing.Point(12, 67);
             this.pnlUseCase.Name = "pnlUseCase";
             this.pnlUseCase.Size = new System.Drawing.Size(860, 582);
             this.pnlUseCase.TabIndex = 3;
+            this.pnlUseCase.Click += new System.EventHandler(this.pnlUseCase_Click);
             this.pnlUseCase.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUseCase_Paint);
             this.pnlUseCase.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseClick);
             this.pnlUseCase.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseMove);
@@ -157,31 +161,25 @@
             this.dyY.TabIndex = 7;
             this.dyY.Text = "dyY";
             // 
-            // lbMM
+            // flowLayoutPanel1
             // 
-            this.lbMM.AutoSize = true;
-            this.lbMM.Location = new System.Drawing.Point(675, 22);
-            this.lbMM.Name = "lbMM";
-            this.lbMM.Size = new System.Drawing.Size(92, 13);
-            this.lbMM.TabIndex = 8;
-            this.lbMM.Text = "Mouse Movement";
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 61);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 179);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // dyM
+            // flowLayoutPanel3
             // 
-            this.dyM.AutoSize = true;
-            this.dyM.Location = new System.Drawing.Point(774, 22);
-            this.dyM.Name = "dyM";
-            this.dyM.Size = new System.Drawing.Size(16, 13);
-            this.dyM.TabIndex = 9;
-            this.dyM.Text = "M";
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 407);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel3.TabIndex = 2;
             // 
             // ScreenUseCaseDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 661);
-            this.Controls.Add(this.dyM);
-            this.Controls.Add(this.lbMM);
             this.Controls.Add(this.dyY);
             this.Controls.Add(this.dyX);
             this.Controls.Add(this.lbY);
@@ -196,6 +194,7 @@
             this.Text = "Use Case Helper";
             this.gbSelectDrawingGroup.ResumeLayout(false);
             this.gbSelectDrawingGroup.PerformLayout();
+            this.pnlUseCase.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,8 +213,8 @@
         private System.Windows.Forms.Label lbY;
         private System.Windows.Forms.Label dyX;
         private System.Windows.Forms.Label dyY;
-        private System.Windows.Forms.Label lbMM;
-        private System.Windows.Forms.Label dyM;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
     }
 }
 

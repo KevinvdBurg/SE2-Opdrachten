@@ -11,7 +11,6 @@ C:\Users\milton\Desktop\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.pdb
 C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseCaseHelper\UseCaseHelper\bin\Debug\UseCaseHelper.exe.config
 C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseCaseHelper\UseCaseHelper\bin\Debug\UseCaseHelper.exe
 C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseCaseHelper\UseCaseHelper\bin\Debug\UseCaseHelper.pdb
-C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.csprojResolveAssemblyReference.cache
 C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.ScreenUseCaseDraw.resources
 C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.Properties.Resources.resources
 C:\Users\Kevin van der Burg\Documents\GitHub\SE2-Opdrachten\Use Case Helper\UseCaseHelper\UseCaseHelper\obj\Debug\UseCaseHelper.ScreenUseCaseTable.resources

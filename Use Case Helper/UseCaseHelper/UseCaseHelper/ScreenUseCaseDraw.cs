@@ -16,14 +16,15 @@ namespace UseCaseHelper
         //fields
         private int x;
         private int y;
-        List<UMLObject> UMLList = new List<UMLObject>();
-        int countClicks = 0;
-        bool rbtnLineState = false;
-        bool rbtnEclipseState = false;
-        bool rbtnTextState = false;
-        bool MouseMove = false;
-        Point Pos2 = new Point();
-        Point Pos1 = new Point();
+        private List<UMLObject> umlList = new List<UMLObject>();
+        private List<Actor> actorList = new List<Actor>();
+        private int countClicks = 0;
+        private bool rbtnLineState = false;
+        private bool rbtnEclipseState = false;
+        private bool rbtnTextState = false;
+        private bool MouseMove = false;
+        private Point Pos2 = new Point();
+        private Point Pos1 = new Point();
         
 
         
@@ -74,7 +75,7 @@ namespace UseCaseHelper
                     positionList.Add(Pos2); 
                     currentType = Convert.ToString(umlType.Line);
                     currentUMLObject = new UMLObject(currentType, positionList);
-                    UMLList.Add(currentUMLObject);
+                    umlList.Add(currentUMLObject);
                     countClicks = 0;
                     
                     ClearPoints();
@@ -106,7 +107,23 @@ namespace UseCaseHelper
                 DrawIncompleteLine(g, Pos1.X, Pos1.Y, x, y);
             }
 
-            foreach (UMLObject obj in UMLList)
+            foreach (Actor actor in actorList)
+            {
+                int x = actor.X;
+                int y = actor.Y;
+
+                g.DrawEllipse(p, x + 10, y, 40, 40);
+
+                g.DrawLine(p, 30, y + 40, x + 30, y + 120);
+
+                g.DrawLine(p, x, y + 50, x + 60, y + 50);
+
+                g.DrawLine(p, x + 30, y + 120, x, y + 160);
+
+                g.DrawLine(p, x + 30, y + 120, x + 60, y + 160);
+            }
+
+            foreach (UMLObject obj in umlList)
             {
 
                 if (obj.Type == Convert.ToString(umlType.Line))
@@ -193,6 +210,37 @@ namespace UseCaseHelper
                 rbtnEclipseState = false;
                 ClearPoints();
                 Refresh();
+            }
+        }
+
+        private void pnlUseCase_Click(object sender, EventArgs e)
+        {
+            MouseEventArgs m = (MouseEventArgs) e;
+
+            if (m.X < 100)
+            {
+                int actorHeight = (pnlUseCase.Height / 3);
+
+                if (m.Y >= 0 && m.Y <= actorHeight)
+                {
+                    MessageBox.Show("Actor1");
+                    Actor actor1 = new Actor(0, 0);
+                    actorList.Add(actor1);
+                    
+                }
+                if (m.Y >= actorHeight && m.Y <= actorHeight * 2)
+                {
+                    MessageBox.Show("Actor2");
+                    Actor actor2 = new Actor(0, actorHeight);
+                    actorList.Add(actor2);
+                }
+                if (m.Y >= actorHeight*2 && m.Y <= actorHeight * 3)
+                {
+                    MessageBox.Show("Actor3");
+                    Actor actor3 = new Actor(0, actorHeight * 2);
+                    actorList.Add(actor3);
+                }
+                Refresh(); 
             }
         }
     }
