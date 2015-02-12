@@ -42,6 +42,9 @@
             this.rchtbDiscription = new System.Windows.Forms.RichTextBox();
             this.rchtbImplementation = new System.Windows.Forms.RichTextBox();
             this.rchtbResult = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnName
@@ -171,11 +174,43 @@
             this.rchtbResult.TabIndex = 12;
             this.rchtbResult.Text = "";
             // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(12, 455);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Save Use Case";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(118, 455);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(173, 21);
+            this.comboBox1.TabIndex = 14;
+            // 
+            // button2
+            // 
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(297, 453);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Load Use Case";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // ScreenUseCaseTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 461);
+            this.ClientSize = new System.Drawing.Size(384, 481);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.rchtbResult);
             this.Controls.Add(this.rchtbImplementation);
             this.Controls.Add(this.rchtbDiscription);
@@ -194,7 +229,6 @@
             this.Name = "ScreenUseCaseTable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "screenUseCaseTable";
-            this.Load += new System.EventHandler(this.ScreenUseCaseTable_Load);
             this.ResumeLayout(false);
 
         }
@@ -215,5 +249,8 @@
         private System.Windows.Forms.RichTextBox rchtbDiscription;
         private System.Windows.Forms.RichTextBox rchtbImplementation;
         private System.Windows.Forms.RichTextBox rchtbResult;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button2;
     }
 }

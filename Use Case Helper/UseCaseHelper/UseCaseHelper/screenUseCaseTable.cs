@@ -16,10 +16,5 @@ namespace UseCaseHelper
         {
             InitializeComponent();
         }
-
-        private void ScreenUseCaseTable_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

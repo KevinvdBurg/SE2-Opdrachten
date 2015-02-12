@@ -107,7 +107,6 @@ namespace UseCaseHelper
                 TextBox txt = new TextBox();
                 txt.Name = "dyTextbox" + txtboxCount++;
                 txt.Location = Pos1;
-                txt.Click();
                 this.pnlUseCase.Controls.Add(txt);
                 ClearPoints();
             }
