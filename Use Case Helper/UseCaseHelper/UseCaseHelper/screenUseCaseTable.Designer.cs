@@ -181,7 +181,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 13;
-            this.button1.Text = "Save Use Case";
+            this.button1.Text = "Save Use Case MAIN BRANCH";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // comboBox1
