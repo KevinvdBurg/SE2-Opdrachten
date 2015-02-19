@@ -41,19 +41,21 @@
             this.lbY = new System.Windows.Forms.Label();
             this.dyX = new System.Windows.Forms.Label();
             this.dyY = new System.Windows.Forms.Label();
+            this.rbtnPointer = new System.Windows.Forms.RadioButton();
             this.gbSelectDrawingGroup.SuspendLayout();
             this.pnlUseCase.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbSelectDrawingGroup
             // 
+            this.gbSelectDrawingGroup.Controls.Add(this.rbtnPointer);
             this.gbSelectDrawingGroup.Controls.Add(this.rbtnText);
             this.gbSelectDrawingGroup.Controls.Add(this.rbtnLine);
             this.gbSelectDrawingGroup.Controls.Add(this.rbtnEclipse);
             this.gbSelectDrawingGroup.Controls.Add(this.flowLayoutPanel1);
             this.gbSelectDrawingGroup.Location = new System.Drawing.Point(12, 6);
             this.gbSelectDrawingGroup.Name = "gbSelectDrawingGroup";
-            this.gbSelectDrawingGroup.Size = new System.Drawing.Size(166, 55);
+            this.gbSelectDrawingGroup.Size = new System.Drawing.Size(279, 55);
             this.gbSelectDrawingGroup.TabIndex = 0;
             this.gbSelectDrawingGroup.TabStop = false;
             this.gbSelectDrawingGroup.Text = "Select drawing group";
@@ -61,7 +63,7 @@
             // rbtnText
             // 
             this.rbtnText.AutoSize = true;
-            this.rbtnText.Location = new System.Drawing.Point(116, 19);
+            this.rbtnText.Location = new System.Drawing.Point(210, 19);
             this.rbtnText.Name = "rbtnText";
             this.rbtnText.Size = new System.Drawing.Size(46, 17);
             this.rbtnText.TabIndex = 2;
@@ -73,7 +75,7 @@
             // rbtnLine
             // 
             this.rbtnLine.AutoSize = true;
-            this.rbtnLine.Location = new System.Drawing.Point(65, 19);
+            this.rbtnLine.Location = new System.Drawing.Point(145, 19);
             this.rbtnLine.Name = "rbtnLine";
             this.rbtnLine.Size = new System.Drawing.Size(45, 17);
             this.rbtnLine.TabIndex = 1;
@@ -85,7 +87,7 @@
             // rbtnEclipse
             // 
             this.rbtnEclipse.AutoSize = true;
-            this.rbtnEclipse.Location = new System.Drawing.Point(6, 19);
+            this.rbtnEclipse.Location = new System.Drawing.Point(80, 19);
             this.rbtnEclipse.Name = "rbtnEclipse";
             this.rbtnEclipse.Size = new System.Drawing.Size(59, 17);
             this.rbtnEclipse.TabIndex = 0;
@@ -103,7 +105,7 @@
             // 
             // btnUndo
             // 
-            this.btnUndo.Location = new System.Drawing.Point(182, 12);
+            this.btnUndo.Location = new System.Drawing.Point(297, 12);
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(75, 23);
             this.btnUndo.TabIndex = 1;
@@ -112,7 +114,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(182, 38);
+            this.btnClear.Location = new System.Drawing.Point(297, 38);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 2;
@@ -175,6 +177,18 @@
             this.dyY.TabIndex = 7;
             this.dyY.Text = "dyY";
             // 
+            // rbtnPointer
+            // 
+            this.rbtnPointer.AutoSize = true;
+            this.rbtnPointer.Location = new System.Drawing.Point(6, 19);
+            this.rbtnPointer.Name = "rbtnPointer";
+            this.rbtnPointer.Size = new System.Drawing.Size(58, 17);
+            this.rbtnPointer.TabIndex = 3;
+            this.rbtnPointer.TabStop = true;
+            this.rbtnPointer.Text = "Pointer";
+            this.rbtnPointer.UseVisualStyleBackColor = true;
+            this.rbtnPointer.CheckedChanged += new System.EventHandler(this.btnPointer_CheckedChanged);
+            // 
             // ScreenUseCaseDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +229,7 @@
         private System.Windows.Forms.Label dyY;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.RadioButton rbtnPointer;
     }
 }
 

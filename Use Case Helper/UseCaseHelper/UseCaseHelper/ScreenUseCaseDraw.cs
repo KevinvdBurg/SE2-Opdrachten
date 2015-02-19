@@ -22,14 +22,15 @@ namespace UseCaseHelper
         private bool rbtnLineState = false;
         private bool rbtnEclipseState = false;
         private bool rbtnTextState = false;
+        private bool rbtnPointerState = false;
         private Point Pos2 = new Point();
         private Point Pos1 = new Point();
         private int txtboxCount = 0;
 
-        
+
         enum umlType
         {
-            Line=0,
+            Line = 0,
             Eclipse,
             Text
         }
@@ -71,12 +72,12 @@ namespace UseCaseHelper
                     Pos2.Y = y;
 
                     positionList.Add(Pos1);
-                    positionList.Add(Pos2); 
+                    positionList.Add(Pos2);
                     currentType = Convert.ToString(umlType.Line);
                     currentUMLObject = new UMLObject(currentType, positionList);
                     umlList.Add(currentUMLObject);
                     countClicks = 0;
-                    
+
                     ClearPoints();
                 }
 
@@ -86,7 +87,7 @@ namespace UseCaseHelper
             //Eclipse
             else if (rbtnEclipse.Checked)
             {
-                
+
                 Pos1.X = x;
                 Pos1.Y = y;
 
@@ -155,7 +156,7 @@ namespace UseCaseHelper
 
                 else if (obj.Type == Convert.ToString(umlType.Text))
                 {
-                    
+
                 }
             }
 
@@ -173,7 +174,7 @@ namespace UseCaseHelper
             {
                 Refresh();
             }
-            
+
         }
 
         private void DrawIncompleteLine(Graphics g, int pos1x, int pos1y, int pos2x, int pos2y)
@@ -192,11 +193,12 @@ namespace UseCaseHelper
         {
             rbtnEclipseState = true;
 
-            if (rbtnLineState == true || rbtnTextState == true)
+            if (rbtnLineState == true || rbtnTextState == true || rbtnPointerState == true)
             {
                 countClicks = 0;
                 rbtnLineState = false;
                 rbtnTextState = false;
+                rbtnPointerState = false;
                 ClearPoints();
                 Refresh();
             }
@@ -206,11 +208,12 @@ namespace UseCaseHelper
         {
             rbtnLineState = true;
 
-            if (rbtnEclipseState == true || rbtnTextState == true)
+            if (rbtnEclipseState == true || rbtnTextState == true || rbtnPointerState == true)
             {
                 countClicks = 0;
                 rbtnEclipseState = false;
                 rbtnTextState = false;
+                rbtnPointerState = false;
                 ClearPoints();
                 Refresh();
             }
@@ -220,11 +223,27 @@ namespace UseCaseHelper
         {
             rbtnTextState = true;
 
-            if (rbtnLineState == true || rbtnEclipseState == true)
+            if (rbtnLineState == true || rbtnEclipseState == true || rbtnPointerState == true)
             {
                 countClicks = 0;
                 rbtnLineState = false;
                 rbtnEclipseState = false;
+                rbtnPointerState = false;
+                ClearPoints();
+                Refresh();
+            }
+        }
+
+        private void btnPointer_CheckedChanged(object sender, EventArgs e)
+        {
+            rbtnPointerState = true;
+
+            if (rbtnLineState == true || rbtnEclipseState == true || rbtnTextState == true)
+            {
+                countClicks = 0;
+                rbtnLineState = false;
+                rbtnEclipseState = false;
+                rbtnTextState = false;
                 ClearPoints();
                 Refresh();
             }
@@ -232,32 +251,34 @@ namespace UseCaseHelper
 
         private void pnlUseCase_Click(object sender, EventArgs e)
         {
-            MouseEventArgs m = (MouseEventArgs) e;
-
-            if (m.X < 100)
+            MouseEventArgs m = (MouseEventArgs)e;
+            if (rbtnPointerState == true)
             {
-                int actorHeight = (pnlUseCase.Height / 3);
+                if (m.X < 100)
+                {
+                    int actorHeight = (pnlUseCase.Height / 3);
 
-                if (m.Y >= 0 && m.Y <= actorHeight)
-                {
-                    MessageBox.Show("Actor1");
-                    Actor actor1 = new Actor(0, 0);
-                    actorList.Add(actor1);
-                    
+                    if (m.Y >= 0 && m.Y <= actorHeight)
+                    {
+                        MessageBox.Show("Actor1");
+                        Actor actor1 = new Actor(0, 0);
+                        actorList.Add(actor1);
+
+                    }
+                    if (m.Y >= actorHeight && m.Y <= actorHeight * 2)
+                    {
+                        MessageBox.Show("Actor2");
+                        Actor actor2 = new Actor(0, actorHeight);
+                        actorList.Add(actor2);
+                    }
+                    if (m.Y >= actorHeight * 2 && m.Y <= actorHeight * 3)
+                    {
+                        MessageBox.Show("Actor3");
+                        Actor actor3 = new Actor(0, actorHeight * 2);
+                        actorList.Add(actor3);
+                    }
+                    Refresh();
                 }
-                if (m.Y >= actorHeight && m.Y <= actorHeight * 2)
-                {
-                    MessageBox.Show("Actor2");
-                    Actor actor2 = new Actor(0, actorHeight);
-                    actorList.Add(actor2);
-                }
-                if (m.Y >= actorHeight*2 && m.Y <= actorHeight * 3)
-                {
-                    MessageBox.Show("Actor3");
-                    Actor actor3 = new Actor(0, actorHeight * 2);
-                    actorList.Add(actor3);
-                }
-                Refresh(); 
             }
         }
     }
