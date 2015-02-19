@@ -39,8 +39,6 @@ namespace UseCaseHelper
         public ScreenUseCaseDraw()
         {
             InitializeComponent();
-            ScreenUseCaseTable screenUseCaseTable = new ScreenUseCaseTable();
-            screenUseCaseTable.Show();
         }
 
         //methods
@@ -48,7 +46,6 @@ namespace UseCaseHelper
         {
             //fields
             List<Point> positionList = new List<Point>();
-
             UMLObject currentUMLObject;
             string currentType;
 
@@ -108,7 +105,9 @@ namespace UseCaseHelper
                 TextBox txt = new TextBox();
                 txt.Name = "dyTextbox" + txtboxCount++;
                 txt.Location = Pos1;
-                this.pnlUseCase.Controls.Add(txt);
+                txt.Click += new EventHandler(clickTextbox);
+
+                this.pnlDraw.Controls.Add(txt);
                 ClearPoints();
             }
 
@@ -256,29 +255,60 @@ namespace UseCaseHelper
             {
                 if (m.X < 100)
                 {
-                    int actorHeight = (pnlUseCase.Height / 3);
+                    int actorHeight = (pnlDraw.Height / 3);
 
                     if (m.Y >= 0 && m.Y <= actorHeight)
                     {
-                        MessageBox.Show("Actor1");
                         Actor actor1 = new Actor(0, 0);
                         actorList.Add(actor1);
 
                     }
                     if (m.Y >= actorHeight && m.Y <= actorHeight * 2)
                     {
-                        MessageBox.Show("Actor2");
                         Actor actor2 = new Actor(0, actorHeight);
                         actorList.Add(actor2);
                     }
                     if (m.Y >= actorHeight * 2 && m.Y <= actorHeight * 3)
                     {
-                        MessageBox.Show("Actor3");
                         Actor actor3 = new Actor(0, actorHeight * 2);
                         actorList.Add(actor3);
                     }
                     Refresh();
                 }
+            }
+        }
+
+        private void clickTextbox(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ScreenUseCaseTable screenUseCaseTable = new ScreenUseCaseTable();
+            screenUseCaseTable.Show();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            actorList.Clear();
+            umlList.Clear();
+            Refresh();
+
+            int i = 0;
+            foreach (Control tempCtrl in this.pnlDraw.Controls)
+            {
+                
+                string namebox = "dyTextbox" + i;
+                if (tempCtrl.Name == namebox)
+                {
+                    this.pnlDraw.Controls.Remove(tempCtrl);
+                }
+                else
+                {
+                    Console.WriteLine(tempCtrl.Name);
+                }
+                i++;
             }
         }
     }

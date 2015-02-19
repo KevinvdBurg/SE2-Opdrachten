@@ -29,21 +29,20 @@
         private void InitializeComponent()
         {
             this.gbSelectDrawingGroup = new System.Windows.Forms.GroupBox();
+            this.rbtnPointer = new System.Windows.Forms.RadioButton();
             this.rbtnText = new System.Windows.Forms.RadioButton();
             this.rbtnLine = new System.Windows.Forms.RadioButton();
             this.rbtnEclipse = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.pnlUseCase = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlDraw = new System.Windows.Forms.Panel();
             this.lbX = new System.Windows.Forms.Label();
             this.lbY = new System.Windows.Forms.Label();
             this.dyX = new System.Windows.Forms.Label();
             this.dyY = new System.Windows.Forms.Label();
-            this.rbtnPointer = new System.Windows.Forms.RadioButton();
+            this.btnNewUseCase = new System.Windows.Forms.Button();
             this.gbSelectDrawingGroup.SuspendLayout();
-            this.pnlUseCase.SuspendLayout();
+            this.pnlDraw.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbSelectDrawingGroup
@@ -52,13 +51,24 @@
             this.gbSelectDrawingGroup.Controls.Add(this.rbtnText);
             this.gbSelectDrawingGroup.Controls.Add(this.rbtnLine);
             this.gbSelectDrawingGroup.Controls.Add(this.rbtnEclipse);
-            this.gbSelectDrawingGroup.Controls.Add(this.flowLayoutPanel1);
             this.gbSelectDrawingGroup.Location = new System.Drawing.Point(12, 6);
             this.gbSelectDrawingGroup.Name = "gbSelectDrawingGroup";
             this.gbSelectDrawingGroup.Size = new System.Drawing.Size(279, 55);
             this.gbSelectDrawingGroup.TabIndex = 0;
             this.gbSelectDrawingGroup.TabStop = false;
             this.gbSelectDrawingGroup.Text = "Select drawing group";
+            // 
+            // rbtnPointer
+            // 
+            this.rbtnPointer.AutoSize = true;
+            this.rbtnPointer.Location = new System.Drawing.Point(6, 19);
+            this.rbtnPointer.Name = "rbtnPointer";
+            this.rbtnPointer.Size = new System.Drawing.Size(58, 17);
+            this.rbtnPointer.TabIndex = 3;
+            this.rbtnPointer.TabStop = true;
+            this.rbtnPointer.Text = "Pointer";
+            this.rbtnPointer.UseVisualStyleBackColor = true;
+            this.rbtnPointer.CheckedChanged += new System.EventHandler(this.btnPointer_CheckedChanged);
             // 
             // rbtnText
             // 
@@ -96,13 +106,6 @@
             this.rbtnEclipse.UseVisualStyleBackColor = true;
             this.rbtnEclipse.CheckedChanged += new System.EventHandler(this.rbtnEclipse_CheckedChanged);
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 61);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 179);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
             // btnUndo
             // 
             this.btnUndo.Location = new System.Drawing.Point(297, 12);
@@ -121,25 +124,19 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.UseWaitCursor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // pnlUseCase
+            // pnlDraw
+            //
+            this.pnlDraw.Location = new System.Drawing.Point(12, 67);
+            this.pnlDraw.Name = "pnlDraw";
+            this.pnlDraw.Size = new System.Drawing.Size(860, 582);
+            this.pnlDraw.TabIndex = 3;
+            this.pnlDraw.Click += new System.EventHandler(this.pnlUseCase_Click);
+            this.pnlDraw.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUseCase_Paint);
+            this.pnlDraw.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseClick);
+            this.pnlDraw.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseMove);
             // 
-            this.pnlUseCase.Controls.Add(this.flowLayoutPanel3);
-            this.pnlUseCase.Location = new System.Drawing.Point(12, 67);
-            this.pnlUseCase.Name = "pnlUseCase";
-            this.pnlUseCase.Size = new System.Drawing.Size(860, 582);
-            this.pnlUseCase.TabIndex = 3;
-            this.pnlUseCase.Click += new System.EventHandler(this.pnlUseCase_Click);
-            this.pnlUseCase.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUseCase_Paint);
-            this.pnlUseCase.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseClick);
-            this.pnlUseCase.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseMove);
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 407);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(0, 0);
-            this.flowLayoutPanel3.TabIndex = 2;
             // 
             // lbX
             // 
@@ -177,23 +174,22 @@
             this.dyY.TabIndex = 7;
             this.dyY.Text = "dyY";
             // 
-            // rbtnPointer
+            // btnNewUseCase
             // 
-            this.rbtnPointer.AutoSize = true;
-            this.rbtnPointer.Location = new System.Drawing.Point(6, 19);
-            this.rbtnPointer.Name = "rbtnPointer";
-            this.rbtnPointer.Size = new System.Drawing.Size(58, 17);
-            this.rbtnPointer.TabIndex = 3;
-            this.rbtnPointer.TabStop = true;
-            this.rbtnPointer.Text = "Pointer";
-            this.rbtnPointer.UseVisualStyleBackColor = true;
-            this.rbtnPointer.CheckedChanged += new System.EventHandler(this.btnPointer_CheckedChanged);
+            this.btnNewUseCase.Location = new System.Drawing.Point(689, 25);
+            this.btnNewUseCase.Name = "btnNewUseCase";
+            this.btnNewUseCase.Size = new System.Drawing.Size(114, 23);
+            this.btnNewUseCase.TabIndex = 8;
+            this.btnNewUseCase.Text = "New UseCase";
+            this.btnNewUseCase.UseVisualStyleBackColor = true;
+            this.btnNewUseCase.Click += new System.EventHandler(this.button1_Click);
             // 
             // ScreenUseCaseDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 661);
+            this.Controls.Add(this.btnNewUseCase);
             this.Controls.Add(this.dyY);
             this.Controls.Add(this.dyX);
             this.Controls.Add(this.lbY);
@@ -201,14 +197,14 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnUndo);
             this.Controls.Add(this.gbSelectDrawingGroup);
-            this.Controls.Add(this.pnlUseCase);
+            this.Controls.Add(this.pnlDraw);
             this.Location = new System.Drawing.Point(100, 100);
             this.Name = "ScreenUseCaseDraw";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Use Case Helper";
             this.gbSelectDrawingGroup.ResumeLayout(false);
             this.gbSelectDrawingGroup.PerformLayout();
-            this.pnlUseCase.ResumeLayout(false);
+            this.pnlDraw.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,14 +218,13 @@
         private System.Windows.Forms.RadioButton rbtnEclipse;
         private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Panel pnlUseCase;
+        private System.Windows.Forms.Panel pnlDraw;
         private System.Windows.Forms.Label lbX;
         private System.Windows.Forms.Label lbY;
         private System.Windows.Forms.Label dyX;
         private System.Windows.Forms.Label dyY;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.RadioButton rbtnPointer;
+        private System.Windows.Forms.Button btnNewUseCase;
     }
 }
 
