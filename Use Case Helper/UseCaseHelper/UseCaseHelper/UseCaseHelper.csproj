@@ -60,6 +60,7 @@
       <DependentUpon>ScreenUseCaseTable.cs</DependentUpon>
     </Compile>
     <Compile Include="UMLObject.cs" />
+    <Compile Include="Save.cs" />
     <EmbeddedResource Include="ScreenUseCaseDraw.resx">
       <DependentUpon>ScreenUseCaseDraw.cs</DependentUpon>
     </EmbeddedResource>
