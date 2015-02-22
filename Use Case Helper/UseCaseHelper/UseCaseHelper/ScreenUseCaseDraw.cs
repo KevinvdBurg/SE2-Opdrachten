@@ -100,10 +100,12 @@ namespace UseCaseHelper
             //Text
             else if (rbtnText.Checked)
             {
+                string txtCount = "dyTextbox" + txtboxCount++;
                 Pos1.X = x;
                 Pos1.Y = y;
                 TextBox txt = new TextBox();
-                txt.Name = "dyTextbox" + txtboxCount++;
+                txt.Name = txtCount;
+                txt.Text = txtCount;
                 txt.Location = Pos1;
                 txt.Click += new EventHandler(clickTextbox);
 
@@ -291,25 +293,26 @@ namespace UseCaseHelper
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+
+            foreach (Control tempCtrl in pnlDraw.Controls)
+            {
+                /*string name = tempCtrl.Name;
+                string namebox = "dyTextbox" + name.Substring(9);
+                if (name == namebox)
+                {*/
+                    pnlDraw.Controls.Remove(tempCtrl);
+                /*}
+                else
+                {
+                    Console.WriteLine("Substring:" + name.Substring(8));
+                    Console.WriteLine("ControlName: " +tempCtrl.Name);
+                    Console.WriteLine("Namebox: " + namebox);
+                }*/
+            }
+
             actorList.Clear();
             umlList.Clear();
             Refresh();
-
-            int i = 0;
-            foreach (Control tempCtrl in this.pnlDraw.Controls)
-            {
-                
-                string namebox = "dyTextbox" + i;
-                if (tempCtrl.Name == namebox)
-                {
-                    this.pnlDraw.Controls.Remove(tempCtrl);
-                }
-                else
-                {
-                    Console.WriteLine(tempCtrl.Name);
-                }
-                i++;
-            }
         }
     }
 }

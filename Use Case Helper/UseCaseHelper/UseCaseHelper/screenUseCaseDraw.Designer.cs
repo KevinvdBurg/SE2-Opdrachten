@@ -33,7 +33,6 @@
             this.rbtnText = new System.Windows.Forms.RadioButton();
             this.rbtnLine = new System.Windows.Forms.RadioButton();
             this.rbtnEclipse = new System.Windows.Forms.RadioButton();
-            this.btnUndo = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.pnlDraw = new System.Windows.Forms.Panel();
             this.lbX = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@
             this.dyY = new System.Windows.Forms.Label();
             this.btnNewUseCase = new System.Windows.Forms.Button();
             this.gbSelectDrawingGroup.SuspendLayout();
-            this.pnlDraw.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbSelectDrawingGroup
@@ -106,20 +104,11 @@
             this.rbtnEclipse.UseVisualStyleBackColor = true;
             this.rbtnEclipse.CheckedChanged += new System.EventHandler(this.rbtnEclipse_CheckedChanged);
             // 
-            // btnUndo
-            // 
-            this.btnUndo.Location = new System.Drawing.Point(297, 12);
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(75, 23);
-            this.btnUndo.TabIndex = 1;
-            this.btnUndo.Text = "Undo";
-            this.btnUndo.UseVisualStyleBackColor = true;
-            // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(297, 38);
+            this.btnClear.Location = new System.Drawing.Point(297, 12);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(75, 49);
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -127,7 +116,7 @@
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // pnlDraw
-            //
+            // 
             this.pnlDraw.Location = new System.Drawing.Point(12, 67);
             this.pnlDraw.Name = "pnlDraw";
             this.pnlDraw.Size = new System.Drawing.Size(860, 582);
@@ -136,7 +125,6 @@
             this.pnlDraw.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUseCase_Paint);
             this.pnlDraw.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseClick);
             this.pnlDraw.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlUseCase_MouseMove);
-            // 
             // 
             // lbX
             // 
@@ -195,7 +183,6 @@
             this.Controls.Add(this.lbY);
             this.Controls.Add(this.lbX);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnUndo);
             this.Controls.Add(this.gbSelectDrawingGroup);
             this.Controls.Add(this.pnlDraw);
             this.Location = new System.Drawing.Point(100, 100);
@@ -204,7 +191,6 @@
             this.Text = "Use Case Helper";
             this.gbSelectDrawingGroup.ResumeLayout(false);
             this.gbSelectDrawingGroup.PerformLayout();
-            this.pnlDraw.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,7 +202,6 @@
         private System.Windows.Forms.RadioButton rbtnText;
         private System.Windows.Forms.RadioButton rbtnLine;
         private System.Windows.Forms.RadioButton rbtnEclipse;
-        private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Panel pnlDraw;
         private System.Windows.Forms.Label lbX;
