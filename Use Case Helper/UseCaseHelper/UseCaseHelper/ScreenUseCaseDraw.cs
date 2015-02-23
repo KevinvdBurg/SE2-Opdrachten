@@ -293,22 +293,22 @@ namespace UseCaseHelper
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-
-            foreach (Control tempCtrl in pnlDraw.Controls)
+            pnlDraw.Controls.Clear();
+            /*foreach (Control tempCtrl in pnlDraw.Controls)
             {
-                /*string name = tempCtrl.Name;
+                string name = tempCtrl.Name;
                 string namebox = "dyTextbox" + name.Substring(9);
                 if (name == namebox)
-                {*/
+                {
                     pnlDraw.Controls.Remove(tempCtrl);
-                /*}
+                }
                 else
                 {
                     Console.WriteLine("Substring:" + name.Substring(8));
                     Console.WriteLine("ControlName: " +tempCtrl.Name);
                     Console.WriteLine("Namebox: " + namebox);
-                }*/
-            }
+                }
+            }*/
 
             actorList.Clear();
             umlList.Clear();
