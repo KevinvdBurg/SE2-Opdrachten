@@ -9,7 +9,7 @@ namespace UseCaseHelper
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Dit Programa is gemaakt door Milton en Kevin uit S22T
         /// </summary>
         [STAThread]
         static void Main()
