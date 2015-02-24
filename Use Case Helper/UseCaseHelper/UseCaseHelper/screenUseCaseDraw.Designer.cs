@@ -39,7 +39,6 @@
             this.lbY = new System.Windows.Forms.Label();
             this.dyX = new System.Windows.Forms.Label();
             this.dyY = new System.Windows.Forms.Label();
-            this.btnNewUseCase = new System.Windows.Forms.Button();
             this.gbSelectDrawingGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,22 +161,11 @@
             this.dyY.TabIndex = 7;
             this.dyY.Text = "dyY";
             // 
-            // btnNewUseCase
-            // 
-            this.btnNewUseCase.Location = new System.Drawing.Point(689, 25);
-            this.btnNewUseCase.Name = "btnNewUseCase";
-            this.btnNewUseCase.Size = new System.Drawing.Size(114, 23);
-            this.btnNewUseCase.TabIndex = 8;
-            this.btnNewUseCase.Text = "New UseCase";
-            this.btnNewUseCase.UseVisualStyleBackColor = true;
-            this.btnNewUseCase.Click += new System.EventHandler(this.button1_Click);
-            // 
             // ScreenUseCaseDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 661);
-            this.Controls.Add(this.btnNewUseCase);
             this.Controls.Add(this.dyY);
             this.Controls.Add(this.dyX);
             this.Controls.Add(this.lbY);
@@ -209,7 +197,6 @@
         private System.Windows.Forms.Label dyX;
         private System.Windows.Forms.Label dyY;
         private System.Windows.Forms.RadioButton rbtnPointer;
-        private System.Windows.Forms.Button btnNewUseCase;
     }
 }
 

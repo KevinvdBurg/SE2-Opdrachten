@@ -39,6 +39,8 @@ namespace UseCaseHelper
         public ScreenUseCaseDraw()
         {
             InitializeComponent();
+            ScreenUseCaseTable screenUseCaseTable = new ScreenUseCaseTable();
+            screenUseCaseTable.Show();
         }
 
         //methods
@@ -105,7 +107,7 @@ namespace UseCaseHelper
                 Pos1.Y = y;
                 TextBox txt = new TextBox();
                 txt.Name = txtCount;
-                txt.Text = txtCount;
+                //txt.Text = txtCount;
                 txt.Location = Pos1;
                 txt.Click += new EventHandler(clickTextbox);
 
@@ -287,8 +289,7 @@ namespace UseCaseHelper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ScreenUseCaseTable screenUseCaseTable = new ScreenUseCaseTable();
-            screenUseCaseTable.Show();
+            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
