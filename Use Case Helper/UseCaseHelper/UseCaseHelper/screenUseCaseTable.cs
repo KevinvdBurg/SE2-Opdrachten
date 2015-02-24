@@ -29,6 +29,7 @@ namespace UseCaseHelper
             Save save = new Save(name, summary, actor, assumption, discription, implementation, result);
             saveList.Add(save);
 
+            comboxSaves.Items.Clear();
             foreach (Save savefile in saveList)
             {
                 comboxSaves.Items.Add(Convert.ToString(savefile.Name));
@@ -56,7 +57,7 @@ namespace UseCaseHelper
         {
             string selectedSave;
 
-            selectedSave = comboxSaves.SelectedText;
+            selectedSave = Convert.ToString(comboxSaves.SelectedItem);
 
             LoadSave(selectedSave);
         }
